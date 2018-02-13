@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Multi-Step Demo Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css">
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less">
+</head>
+<body>
+	<!-- here content starts -->
+	<section class="multi-step-form">
+        <!-- progress bar starts here -->
+		<div class="steps">
+			<button class="active" type="button" disabled>1</button>
+			<button type="button" disabled>2</button>
+			<button type="button" disabled>3</button>
+			<button type="button" disabled>4</button>
+		</div>
+		<!-- form bar starts here -->
+		<form name="DemoForm" action="#" method="post" id="form19" class="elq-form" >
+			<fieldset aria-label="Step One" tabindex="-1" id="step-1">
+				<h2>Step One: Simple input and text areas</h2>
+				<div class="fieldset-wrap">
+					<label for="field0" >Required Input *</label>
+					<input id="field0" name="singleLineText" type="text" value="" class="form-control" required />
+					<label for="field1" >Not required input</label>
+					<input id="field1" name="singleLineText2" type="text" value="" class="form-control" />
+					<label for="field6" >Required Textarea *</label>
+					<textarea id="field6" name="paragraphText" class="form-control" required ></textarea>
+					<label for="field7" >Not required Textarea</label>
+					<textarea id="field7" name="paragraphText2" class="form-control" ></textarea>
+					<span class="instructions" >Some instruction for this field</span>
+				</div>
+				<div class="btns">
+					<button class="btn btn-default btn-next" type="button" aria-controls="step-2">NEXT</button>
+				</div>
+			</fieldset>				
+			<fieldset aria-label="Step Two" tabindex="-1" id="step-2">
+				<h2>Step Two: checkbox group, select and hidden datepicker</h2>
+				<div class="fieldset-wrap">
+					<div id="formElement2" >
+						<label for="field2">Checkbox group (choose at least 1 of this group)</label>
+						<label for="subjects" id="subject_error" style="display: block;"></label>
+						<label class="checkbox" >
+							<input name="checkboxes" type="checkbox" value="ch-one" class="services-group" id="ch-one"  />
+							<span class="inner" >first checkbox with hidden text input field</span>
+						</label>
+						<label class="checkbox" >
+							<input name="checkboxes" type="checkbox" value="ch-two" class="services-group" id="ch-two"  />
+							<span class="inner" >second checkbox</span>
+						</label>
+						<label class="checkbox" >
+							<input name="checkboxes" type="checkbox" value="ch-three" class="services-group" id="ch-three" />
+							<span class="inner" >third checkbox</span>
+						</label>
+					</div>
+					<div id="formElement3">
+						<label for="field3">Required hidden text input</label>
+						<input id="field3" name="singleLineText3" type="text" value="" class="form-control" required />
+						<span class="instructions">some instructions for this field</span>
+					</div>
+					<div id="formElement4">
+						<label for="field4">Put the date *</label>
+						<select id="field4" name="dropdownMenu" class="form-control" required>
+							<option />
+							<option value="don't know" >don't know what you are talking about</option>
+							<option value="know" >yes, I know date, give me datepicker</option>
+						</select>
+					</div>
+					<div id="formElement5">
+						<label for="field5">date *</label>
+						<input id="field5" name="singleLineText4" type="text" value="" class="datepicker form-control" required />
+					</div>
+				</div>
+				<div class="btns">
+					<button class="btn btn-default btn-prev" type="button" aria-controls="step-1">PREVIOUS</button>
+					<button class="btn btn-default btn-next" type="button" aria-controls="step-3">NEXT</button>
+				</div>
+			</fieldset>
+			<fieldset aria-label="Step Three" tabindex="-1" id="step-3">
+				<h2>Step Three: Contact data</h2>
+				<div class="fieldset-wrap">
+					<h3 class="heading">Invoice data</h3>
+					<label for="field9">Tax number (10 digits) *</label>
+					<input id="field9" name="singleLineText5" type="text" value="" class="form-control" required />
+					<label for="field12">Zip code *</label>
+					<input id="field12" name="singleLineText8" type="text" value="" class="form-control" required />
+					<label for="field13">City *</label>
+					<input id="field13" name="singleLineText10" type="text" value="" class="form-control" required />
+					<label for="field14">Street *</label>
+					<input id="field14" name="singleLineText9" type="text" value="" class="form-control" required />
+					<h3 class="heading-inner" >Contact data</h3>
+					<label for="field16">Name *</label>
+					<input id="field16" name="singleLineText11" type="text" value="" class="form-control" required />
+					<label for="field17">Phone *</label>
+					<input id="field17" name="singleLineText12" type="text" value="" class="form-control" required />
+					<label for="field18">Email	*</label>
+					<input id="field18" name="emailAddress" type="email" value="" class="form-control" required />
+					<h3 class="heading-inner" >Delivery adderess</h3>
+					<div id="formElement29">
+						<input name="singleCheckbox2" type="checkbox" value="on" id="singleCheckbox2" />
+						<label for="singleCheckbox2">if different from invoice</label>
+					</div>
+					<div id="formElement31">
+						<label for="field31">Zip code</label>
+						<input id="field31" name="singleLineText21" type="text" value="" class="form-control"  />
+					</div>
+					<div id="formElement32">
+						<label for="field32">City</label>
+						<input id="field32" name="singleLineText22" type="text" value="" class="form-control"  />
+					</div>
+					<div id="formElement33">
+						<label for="field33">Street</label>
+						<input id="field33" name="singleLineText23" type="text" value="" class="form-control"  />
+					</div>
+					<h3 id="formElement34" class="heading-inner" >Person for contact</h3>
+					<div id="formElement35">
+						<label for="field35">Name *</label>
+						<input id="field35" name="singleLineText25" type="text" value="" class="form-control" required />
+					</div>
+					<div id="formElement36">
+						<label for="field36">Phone *</label>
+						<input id="field36" name="singleLineText24" type="text" value="" class="form-control" required />
+					</div>
+					<div id="formElement37">
+						<label for="field37">Email *</label>
+						<input id="field37" name="singleLineText26" type="email" value="" class="form-control" required />
+					</div>
+					<label for="field38">Commentary</label>
+					<textarea id="field38" name="paragraphText3" class="form-control" ></textarea>						
+				</div>
+				<div class="btns">
+					<button class="btn btn-default btn-prev" type="button" aria-controls="step-2">PREVIOUS</button>
+					<button class="btn btn-default btn-next" type="button" aria-controls="step-4">NEXT</button>
+				</div>
+			</fieldset>			
+			<fieldset aria-label="Step Four" tabindex="-1" id="step-4">
+				<h2>Step four: Agreements (checkbox / select)</h2>
+				<div class="fieldset-wrap">
+					<input name="singleCheckbox3" type="checkbox" value="on" id="singleCheckbox3" required />
+					<label for="">Some agreement</label>
+					<span class="instructions">Text about agreement</span>
+					<label for="field40">Handling of personal data *</label>
+					<select id="field40" name="dropdownMenu2" class="form-control" required >
+						<option />
+						<option value="Agree">Agree</option>
+					</select>
+					<span class="instructions">And some text about this agreement</span>
+				</div>
+				<div class="btns">
+					<button class="btn btn-default btn-prev" type="button" aria-controls="step-3">PREVIOUS</button>
+					<button class="btn btn-success" type="submit">SEND</button> 
+				</div>
+			</fieldset>		
+		</form>
+	</section>
+	<!-- here content ends -->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+	<script src="js/validation-rules.js"></script>
+	<script src="js/stepping.js"></script>
+	<script src="js/form-hidding.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+			$( ".datepicker" ).datepicker();
+		} );
+	</script>
+</body>
+</html>
