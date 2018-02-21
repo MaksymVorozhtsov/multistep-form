@@ -20,6 +20,17 @@ $( "#form19" ).validate({
         required: true,
         number: true
       },
+      singleLineText8: {
+        required: true,
+        number: true,
+        minlength: 5,
+        maxlength: 5
+      },
+      singleLineText21: {
+        number: true,
+        minlength: 5,
+        maxlength: 5
+      },
       "checkboxes": {
         require_from_group: [1, ".services-group"]
       }
@@ -47,6 +58,17 @@ $( "#form19" ).validate({
       singleLineText24: {
         required: "Field is required",
         number: "Please fill this field just with numbers"
+      },
+      singleLineText8: {
+        required: "Field is required",
+        number: "Please fill this field just with numbers",
+        minlength: "Zip code need to have 5 digits",
+        maxlength: "Zip code need to have only 5 digits"
+      },
+      singleLineText21: {
+        number: "Please fill this field just with numbers",
+        minlength: "Zip code need to have 5 digits",
+        maxlength: "Zip code need to have only 5 digits"
       },
       'services-group': {
         required: 'Please fill at least 1 of checkboxes'

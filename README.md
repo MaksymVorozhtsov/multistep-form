@@ -4,6 +4,8 @@ Multi-step form with:
 - JQuery validation
 - hidden fields (showing after checkbox checking)
 - checkboxes group validation
+- checkboxes mirrors
+- checkboxes / select values to input
 - jquery datapicker
 
 Used libraries

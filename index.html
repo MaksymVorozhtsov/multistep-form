@@ -46,17 +46,30 @@
 						<label for="field2">Checkbox group (choose at least 1 of this group)</label>
 						<label for="subjects" id="subject_error" style="display: block;"></label>
 						<label class="checkbox" >
-							<input name="checkboxes" type="checkbox" value="ch-one" class="services-group" id="ch-one"  />
+							<input name="checkboxes" type="checkbox" value="ch-one" class="services-group" id="one"  />
 							<span class="inner" >first checkbox with hidden text input field</span>
 						</label>
 						<label class="checkbox" >
-							<input name="checkboxes" type="checkbox" value="ch-two" class="services-group" id="ch-two"  />
+							<input name="checkboxes" type="checkbox" value="ch-two" class="services-group" id="two"  />
 							<span class="inner" >second checkbox</span>
 						</label>
 						<label class="checkbox" >
-							<input name="checkboxes" type="checkbox" value="ch-three" class="services-group" id="ch-three" />
+							<input name="checkboxes" type="checkbox" value="ch-three" class="services-group" id="three" />
 							<span class="inner" >third checkbox</span>
 						</label>
+				        <label class="checkbox" >
+							<input name="checkboxes" type="checkbox" value="ch-two" class="services-group" id="two-mir"  />
+							<span class="inner" >second checkbox mirror</span>
+						</label>
+						<label class="checkbox" >
+							<input name="checkboxes" type="checkbox" value="ch-three" class="services-group" id="three-mir" />
+							<span class="inner" >third checkbox mirror</span>
+						</label>
+					</div>
+				    <div id="formElement2-1">
+						<label for="field2-1">Checkboxes value</label>
+						<input id="field2-1" name="checkboxesValues" type="text" value="" class="form-control" />
+						<span class="instructions">filled on "Next" mousedown</span>
 					</div>
 					<div id="formElement3">
 						<label for="field3">Required hidden text input</label>
@@ -65,11 +78,16 @@
 					</div>
 					<div id="formElement4">
 						<label for="field4">Put the date *</label>
-						<select id="field4" name="dropdownMenu" class="form-control" required>
+						<select id="field4" name="dropdownMenu" class="form-control date-select" required>
 							<option />
 							<option value="don't know" >don't know what you are talking about</option>
 							<option value="know" >yes, I know date, give me datepicker</option>
 						</select>
+					</div>
+                    <div id="formElement4-1">
+						<label for="field4-1">Select value</label>
+						<input id="field4-1" name="selectValues" type="text" value="" class="form-control" />
+						<span class="instructions">filled on "Next" mouseup</span>
 					</div>
 					<div id="formElement5">
 						<label for="field5">date *</label>
@@ -78,7 +96,7 @@
 				</div>
 				<div class="btns">
 					<button class="btn btn-default btn-prev" type="button" aria-controls="step-1">PREVIOUS</button>
-					<button class="btn btn-default btn-next" type="button" aria-controls="step-3">NEXT</button>
+					<button class="btn btn-default btn-next" type="button" aria-controls="step-3" onmousedown="getCheckedCheckboxes()" onmouseup="getSelectedOption()">NEXT</button>
 				</div>
 			</fieldset>
 			<fieldset aria-label="Step Three" tabindex="-1" id="step-3">
@@ -87,8 +105,8 @@
 					<h3 class="heading">Invoice data</h3>
 					<label for="field9">Tax number (10 digits) *</label>
 					<input id="field9" name="singleLineText5" type="text" value="" class="form-control" required />
-					<label for="field12">Zip code *</label>
-					<input id="field12" name="singleLineText8" type="text" value="" class="form-control" required />
+					<label for="field12">Zip code (5 digits) *</label>
+					<input id="field12" name="singleLineText8" type="text" value="" class="form-control" />
 					<label for="field13">City *</label>
 					<input id="field13" name="singleLineText10" type="text" value="" class="form-control" required />
 					<label for="field14">Street *</label>
@@ -106,7 +124,7 @@
 						<label for="singleCheckbox2">if different from invoice</label>
 					</div>
 					<div id="formElement31">
-						<label for="field31">Zip code</label>
+						<label for="field31">Zip code (5 digits)</label>
 						<input id="field31" name="singleLineText21" type="text" value="" class="form-control"  />
 					</div>
 					<div id="formElement32">
@@ -167,6 +185,9 @@
 	<script src="js/validation-rules.js"></script>
 	<script src="js/stepping.js"></script>
 	<script src="js/form-hidding.js"></script>
+	<script src="js/checkboxes-mirrors.js"></script>
+    <script src="js/checkboxes-to-input.js"></script>
+    <script src="js/select-to-input.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
 		$( function() {
